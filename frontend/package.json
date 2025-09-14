@@ -2,11 +2,10 @@
   "name": "freemoney-frontend",
   "version": "1.0.0",
   "private": true,
- "scripts": {
-  "dev": "next dev",
-  "build": "next build && next export",
-  "start": "next start"
-}
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build && next export",
+    "start": "next start"
   },
   "dependencies": {
     "next": "13.4.7",
