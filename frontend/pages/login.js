@@ -1,0 +1,4 @@
+import {useState} from 'react'; import axios from 'axios'; import Router from 'next/router';
+export default function Login(){ const [email,setEmail]=useState(''); const [pw,setPw]=useState('');
+  async function submit(e){ e.preventDefault(); try{ const r=await axios.post('/api/auth/login',{email,password:pw}); localStorage.setItem('token', r.data.token); Router.push('/wallet'); }catch(e){ alert('Invalid'); } }
+  return (<div><div className='header'><img src='/logo.svg' style={{height:34}} alt='logo' /></div><div className='container'><div className='card'><h2>Login</h2><form onSubmit={submit}><input placeholder='email' value={email} onChange={e=>setEmail(e.target.value)} /><br/><input placeholder='password' type='password' value={pw} onChange={e=>setPw(e.target.value)} /><br/><button>Login</button></form></div></div></div>) }
